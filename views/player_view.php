@@ -62,7 +62,7 @@ if ($google_fonts) {
 
 <div class="plugin_wrapper" style="width:<?php echo $atts['width'];?>;">
     <div class="rp_plugin">
-        <div class="rp_ctaData_<?php echo $id;?>" style="display: none; position: relative; margin-bottom: 30px;">
+        <div class="rp_ctaData_<?php echo $id;?>" style="display: none; position: relative; margin-bottom: 0px;">
             <div class="rp_ctaData_<?php echo $id;?>_wrapper" id="rp_ctaData_<?php echo $id;?>_wrapper" style="width:<?php echo $atts['width'];?>; height: 360px;">
                 <div class="rp_ctaData_<?php echo $id;?>_headline" style="padding: 20px; text-align: center;"></div>
                 <div class="rp_ctaData_<?php echo $id;?>_subheadline" style="padding: 20px;"></div>
@@ -75,7 +75,7 @@ if ($google_fonts) {
             </div>
         </div>
 
-        <div class="rp_videoContainer rp_video_<?php echo $id;?>Container" style="display: none;">
+        <div class="rp_videoContainer rp_video_<?php echo $id;?>Container" style="display: none; margin-bottom: 0px;">
             <div class="rp_video rp_video_<?php echo $id;?>">
             </div>
         </div>
