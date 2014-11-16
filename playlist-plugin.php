@@ -1588,7 +1588,7 @@ class playlistPlugin
 
 
 
-    public function add_mce_plugin()
+    public function add_mce_plugin($plugin_array)
 
     {
 
