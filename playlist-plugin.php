@@ -10,7 +10,7 @@ Plugin URI: http://MyProfitPlayer.com
 
 Description: My Profit Player turns every video on your website into a Money Machine!
 
-Version: 1.0.1
+Version: 1.0.2
 
 Author: ProfitPlugins.com
 
@@ -20,7 +20,7 @@ Author URI: http://ProfitPlugins.com
 
 define("PLP_NAME", "My Profit Player");
 
-define("PLP_VERSION", '1.0.1');
+define("PLP_VERSION", '1.0.2');
 
 define("PLP_SLUG", "plp_admin");
 
@@ -1537,15 +1537,17 @@ class playlistPlugin
 
         $response = unserialize($response);
 
-        if ($response->new_version != PLP_VERSION) {
-            $obj = new stdClass();
-            $obj->name = PLP_NAME;
-            $obj->slug = "my-profit-player";
-            $obj->new_version = $response->new_version;
-            $obj->package = $response->package;
+        if (!empty($response->new_version)) {
+            if ($response->new_version != PLP_VERSION) {
+                $obj = new stdClass();
+                $obj->name = PLP_NAME;
+                $obj->slug = "my-profit-player";
+                $obj->new_version = $response->new_version;
+                $obj->package = $response->package;
 
-            $exploded = explode("plugins/", PLP_PATH);
-            $transient->response[$exploded[1]."playlist-plugin.php"] = $obj;
+                $exploded = explode("plugins/", PLP_PATH);
+                $transient->response[$exploded[1]."playlist-plugin.php"] = $obj;
+            }
         }
 
         return $transient;
